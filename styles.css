@@ -1,24 +1,35 @@
 body {
-    margin: 0%;
+    margin: 0;
     background-color: rgb(59, 59, 59);
-}
-
-.container {  display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-auto-columns: 1fr;
-    grid-auto-rows: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      ". . hotbar"
-      ". timergrid ."
-      ". . .";
+    height: 100vh; /* Set the body height to the full viewport height */
+    overflow: hidden; /* Hide any overflow content */
   }
   
-  .timergrid {  display: grid;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "titlebar . hotbar"
+      ". timergrid ."
+      ". . .";
+    height: 100%; /* Use the full height of the body */
+  }
+
+  .titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align at the start (left) of the container */
+    padding-left: 20px; /* Add some left padding */
+    grid-area: titlebar; /* Place in the titlebar grid area */
+    color: white;
+  }
+  
+  .timergrid {
+    display: grid;
     grid-template-columns: 0.6fr 1.8fr 0.6fr;
-    grid-template-rows: 1.7fr 0.3fr 1fr;
+    grid-template-rows: 0.1fr 0.3fr 0.1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -26,38 +37,50 @@ body {
       "progressbar progressbar progressbar"
       ". timerbutton .";
     grid-area: timergrid;
+    height: 100%; /* Use the full height of the container */
   }
   
-  .countdown { grid-area: countdown;
+  .countdown {
+    grid-area: countdown;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 150pt;
   }
   
-  .progressbar { grid-area: progressbar;
+  .progressbar {
+    grid-area: progressbar;
     display: flex;
     justify-content: center;
     align-items: center;
-   }
+  }
   
-  .button { grid-area: timerbutton;
+  .button {
+    grid-area: timerbutton;
     display: flex;
-    background-color: rgb(252, 215, 96);
-    border-radius: 20%;
-    box-sizing: border-box;
-    padding-top: 5%;
-    border-color: black;
-    border-width: 5px;
-    border-style: solid;
     justify-content: center;
     align-items: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
- 
-   
-   }
+    padding: 20%;
+  }
   
-  .hotbar {  display: flex;
+  .buttontext {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34pt; 
+    border-style: solid;
+    border-width: 2px;
+    background-color: rgb(69, 126, 82);
+    border-color: rgb(189, 202, 184);
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 25%;
+  }
+
+  .hotbar {
+    display: flex;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.6fr 1.4fr 1fr;
     gap: 0px 0px;
@@ -68,11 +91,19 @@ body {
       ". . .";
     grid-area: hotbar;
     justify-content: space-around;
+    color: white;
+    height: 100%; 
   }
   
-  .github { grid-area: github; }
+  .github {
+    grid-area: github;
+  }
   
-  .email { grid-area: email; }
+  .email {
+    grid-area: email;
+  }
   
-  .linkedin { grid-area: linkedin; }
+  .linkedin {
+    grid-area: linkedin;
+  }
   
