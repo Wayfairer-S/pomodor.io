@@ -1,0 +1,78 @@
+body {
+    margin: 0%;
+    background-color: rgb(59, 59, 59);
+}
+
+.container {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . hotbar"
+      ". timergrid ."
+      ". . .";
+  }
+  
+  .timergrid {  display: grid;
+    grid-template-columns: 0.6fr 1.8fr 0.6fr;
+    grid-template-rows: 1.7fr 0.3fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "countdown countdown countdown"
+      "progressbar progressbar progressbar"
+      ". timerbutton .";
+    grid-area: timergrid;
+  }
+  
+  .countdown { grid-area: countdown;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .progressbar { grid-area: progressbar;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+  
+  .button { grid-area: timerbutton;
+    display: flex;
+    background-color: rgb(252, 215, 96);
+    border-radius: 20%;
+    box-sizing: border-box;
+    padding-top: 5%;
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ 
+   
+   }
+  
+  .hotbar {  display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.6fr 1.4fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "linkedin github email"
+      ". . ."
+      ". . .";
+    grid-area: hotbar;
+    justify-content: space-around;
+  }
+  
+  .github { grid-area: github; }
+  
+  .email { grid-area: email; }
+  
+  .linkedin { grid-area: linkedin; }
+  
